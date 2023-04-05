@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:500');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:900');
+
+:root {
+  --header: rgba(0, 0, 0, 0.1);
+  --main: rgb(144, 238, 144);
+  --nav-highlight: rgb(255, 255, 255);
+  --transparent: rgba(0, 0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  font-family: 'Inter', sans-serif;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "main";
+}
+
+.header {
+  background-color: var(--header);
+  position: absolute;
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 0px 20px;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Vollkorn', serif;
+  font-size: 3rem;
+}
+
+.nav {
+  display: flex;
+  margin-left: auto;
+  list-style: none;
+  gap: 30px;
+  font-size: 1.2rem;
+}
+
+.nav li {
+  cursor: pointer;
+  border-bottom: 2px solid var(--transparent);
+}
+
+.nav li:hover {
+  border-bottom: 2px solid var(--nav-highlight);
+}
+
+.main {
+  background: url('./main-bg.jpg');
+  background-position: center;
+  grid-area: main;
+}
