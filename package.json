@@ -1,0 +1,27 @@
+{
+  "name": "odin-restaurant",
+  "version": "1.0.0",
+  "description": "A simple restaurant page to practice DOM manipulation",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/villiamrose/odin-restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/villiamrose/odin-restaurant/issues"
+  },
+  "homepage": "https://github.com/villiamrose/odin-restaurant#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
+  }
+}
