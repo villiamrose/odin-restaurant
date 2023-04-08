@@ -1,5 +1,7 @@
 import './style.css';
 import { buildHomepage } from './homepage.js';
+// import { buildMenu } from './menu.js';
+
 
 function homepageHandler() {
   const slideContainer = document.getElementById("slide-container");
@@ -39,4 +41,6 @@ function homepageHandler() {
   }, 10000);
 }
 
-buildHomepage();
+// buildMenu();
+
+// buildHomepage();

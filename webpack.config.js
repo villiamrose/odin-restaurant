@@ -5,7 +5,8 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    homepage: './src/homepage.js'
+    homepage: './src/homepage.js',
+    menu: './src/menu.js'
   },
   output: {
     filename: '[name].js',
@@ -35,6 +36,18 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.jpg/,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader'
+          }
+        ]
       }
     ]
   }
