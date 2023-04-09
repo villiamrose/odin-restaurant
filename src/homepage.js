@@ -1,3 +1,5 @@
+export { buildHomepage };
+
 function buildHomepage() {
   const slideContainer = document.createElement('div');
   slideContainer.className = 'slide-container';
@@ -61,5 +63,3 @@ function buildSlide(definition) {
 
   return slideElement;
 }
-
-export { buildHomepage };

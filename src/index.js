@@ -1,6 +1,6 @@
 import './style.css';
 import { buildHomepage } from './homepage.js';
-// import { buildMenu } from './menu.js';
+import { buildMenu } from './menu.js';
 
 
 function homepageHandler() {
@@ -41,6 +41,6 @@ function homepageHandler() {
   }, 10000);
 }
 
-// buildMenu();
+buildMenu();
 
 // buildHomepage();
