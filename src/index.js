@@ -41,6 +41,24 @@ function homepageHandler() {
   }, 10000);
 }
 
-buildMenu();
+const home = document.querySelector('.home-nav');
+const menu = document.querySelector('.menu-nav');
 
-// buildHomepage();
+home.addEventListener("click", () => {
+  const currentSelected = document.querySelector('.nav [aria-selected="true"]');
+  currentSelected.ariaSelected = false;
+
+  home.ariaSelected = true;
+  
+  buildHomepage();
+});
+menu.addEventListener("click", () => {
+  const currentSelected = document.querySelector('.nav [aria-selected="true"]');
+  currentSelected.ariaSelected = false;
+  
+  menu.ariaSelected = true;
+
+  buildMenu();
+})
+
+buildHomepage();

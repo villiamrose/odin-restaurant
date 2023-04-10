@@ -1,6 +1,9 @@
 export { buildHomepage };
 
 function buildHomepage() {
+  const main = document.querySelector('.main');
+  main.childNodes.forEach(child => child.remove());
+
   const slideContainer = document.createElement('div');
   slideContainer.className = 'slide-container';
   slideContainer.id = 'slide-container';
@@ -20,7 +23,6 @@ function buildHomepage() {
   home.className = 'home';
   home.append(prevBtn, nextBtn, slideContainer);
 
-  const main = document.querySelector('.main');
   main.append(home);
 }
 

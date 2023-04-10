@@ -1,11 +1,13 @@
 export { buildMenu };
 
 function buildMenu() {
+  const main = document.querySelector('.main');
+  main.childNodes.forEach(child => child.remove());
+
   const menu = document.createElement('div');
   menu.className = 'menu';
   appendItems(menu);
 
-  const main = document.querySelector('.main');
   main.append(menu);
 }
 
