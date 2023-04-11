@@ -1,3 +1,5 @@
+import { getItems } from './items.js';
+
 export { buildHomepage };
 
 function buildHomepage() {
@@ -27,33 +29,22 @@ function buildHomepage() {
 }
 
 function appendSlides(container) {
-  const definitions = [
-    {
-      term: "Kare-kare",
-      description: "Kare-kare is a Philippine stew that features a thick savory peanut sauce. It is generally made from a base of stewed oxtail, beef tripe, pork hocks, calves' feet, pig's feet or trotters, various cuts of pork, beef stew meat, and occasionally offal."
-    },{
-      term: "Sinigang",
-      description: "Sinigang is a Filipino soup or stew characterized by its sour and savory taste. It is most often associated with tamarind, although it can use other sour fruits and leaves as the souring agent. It is one of the more popular dishes in Filipino cuisine."
-    },{
-      term: "Adobo",
-      description: "Adobo is a popular Filipino dish that involves meat, seafood, or vegetables marinated in vinegar, soy sauce, garlic, bay leaves, and black peppercorns, which is browned in oil, and simmered in the marinade."
-    }
-  ];
+  const items = getItems();
   
-  definitions.forEach((definition) => {
-    const slide = buildSlide(definition);
+  items.forEach((item) => {
+    const slide = buildSlide(item);
     container.append(slide);
   });
 }
 
-function buildSlide(definition) {
+function buildSlide(item) {
   const termElement = document.createElement('h1');
   termElement.className = 'term';
-  termElement.textContent = definition.term;
+  termElement.textContent = item.name;
 
   const descElement = document.createElement('p');
   descElement.className = 'description';
-  descElement.textContent = definition.description;
+  descElement.textContent = item.definition;
 
   const defElement = document.createElement('div');
   defElement.className = 'definition';

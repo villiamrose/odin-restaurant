@@ -1,3 +1,5 @@
+import { getItems } from './items.js';
+
 export { buildMenu };
 
 function buildMenu() {
@@ -45,57 +47,4 @@ function buildItem(item) {
   console.log(itemElement);
 
   return itemElement;
-}
-
-function getItems() {
-  return [
-    {
-      name: 'Adobo',
-      price: 50.00
-    },
-    {
-      name: 'Balbacua',
-      price: 40.00
-    },
-    {
-      name: 'Dinuguan',
-      price: 45.00
-    },
-    {
-      name: 'Humba',
-      price: 50.00
-    },
-    {
-      name: 'Kaldereta',
-      price: 80.00
-    },
-    {
-      name: 'Kare-Kare',
-      price: 90.00
-    },
-    {
-      name: 'Laing',
-      price: 40.00
-    },
-    {
-      name: 'Nilaga',
-      price: 70.00
-    },
-    {
-      name: 'Papaitan',
-      price: 60.00
-    },
-    {
-      name: 'Pinakbet',
-      price: 45.00
-    },
-    {
-      name: 'Sinigang',
-      price: 70.00
-    },
-    {
-      name: 'Tinola',
-      price: 50.00
-    }
-  ]
 }
