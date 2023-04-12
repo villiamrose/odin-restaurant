@@ -1,6 +1,6 @@
 import { getItems } from './items.js';
 
-export { buildHomepage };
+export { buildHomepage, animateSlides };
 
 function buildHomepage() {
   const main = document.querySelector('.main');
@@ -14,18 +14,59 @@ function buildHomepage() {
   const prevBtn = document.createElement('button');
   prevBtn.className = 'slide-arrow';
   prevBtn.id = 'slide-arrow-prev';
-  prevBtn.innerHTML = "&#8249;";
+  prevBtn.innerHTML = '&#8249;';
+  prevBtn.addEventListener('click', () => scrollSlide('left'));
 
   const nextBtn = document.createElement('button');
   nextBtn.className = 'slide-arrow';
   nextBtn.id = 'slide-arrow-next';
-  nextBtn.innerHTML = "&#8250;";
+  nextBtn.innerHTML = '&#8250;';
+  nextBtn.addEventListener('click', () => scrollSlide('right'));
   
   const home = document.createElement('div');
   home.className = 'home';
   home.append(prevBtn, nextBtn, slideContainer);
 
   main.append(home);
+}
+
+function animateSlides() {
+  const items = getItems();
+  let count = 1;
+
+  setInterval(() => {
+    const home = document.querySelector('.home');
+    if (home) {
+      if (count < items.length) {
+        scrollSlide('right');
+        count = count + 1;
+      } else {
+        resetSlides();
+        count = 1;
+      }
+    } else {
+      count = 1;
+    }
+  }, 8000);
+}
+
+function scrollSlide(direction) {
+  const slideContainer = document.getElementById('slide-container');
+  const slide = document.querySelector('.slide');
+  const slideWidth = slide.clientWidth;
+  if (direction === 'right') {
+    slideContainer.scrollLeft += slideWidth
+  } else if (direction === 'left') {
+    slideContainer.scrollLeft -= slideWidth
+  };
+}
+
+function resetSlides() {
+  const slideContainer = document.getElementById('slide-container');
+  const slide = document.querySelector('.slide');
+  const slideCount = slideContainer.childNodes.length;
+  const slideWidth = slide.clientWidth * slideCount;
+  slideContainer.scrollLeft -= slideWidth;
 }
 
 function appendSlides(container) {
