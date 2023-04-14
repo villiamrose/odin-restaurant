@@ -1,10 +1,12 @@
 import './style.css';
 import { buildHomepage, animateSlides } from './homepage.js';
 import { buildMenu } from './menu.js';
+import { buildAbout } from './about.js';
 
 function initializeNav() {
   const home = document.querySelector('.home-nav');
   const menu = document.querySelector('.menu-nav');
+  const about = document.querySelector('.about-nav');
 
   home.addEventListener('click', () => {
     clearSelectedNav();
@@ -16,6 +18,11 @@ function initializeNav() {
     menu.ariaSelected = true;
     buildMenu();
   });
+  about.addEventListener('click', () => {
+    clearSelectedNav();
+    about.ariaSelected = true;
+    buildAbout();
+  })
 }
 
 function clearSelectedNav() {
@@ -23,6 +30,6 @@ function clearSelectedNav() {
   currentSelected.ariaSelected = false;
 }
 
-// initializeNav();
-// buildHomepage();
-// animateSlides();
+initializeNav();
+buildHomepage();
+animateSlides();
