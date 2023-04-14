@@ -23,6 +23,6 @@ function clearSelectedNav() {
   currentSelected.ariaSelected = false;
 }
 
-initializeNav();
-buildHomepage();
-animateSlides();
+// initializeNav();
+// buildHomepage();
+// animateSlides();
