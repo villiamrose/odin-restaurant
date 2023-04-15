@@ -2,6 +2,7 @@ import './style.css';
 import { buildHomepage, animateSlides } from './homepage.js';
 import { buildMenu } from './menu.js';
 import { buildAbout } from './about.js';
+import { buildMain } from './main';
 
 function initializeNav() {
   const home = document.querySelector('.home-nav');
@@ -30,6 +31,7 @@ function clearSelectedNav() {
   currentSelected.ariaSelected = false;
 }
 
+buildMain();
 initializeNav();
 buildHomepage();
 animateSlides();
