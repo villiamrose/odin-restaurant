@@ -44,7 +44,5 @@ function buildItem(item) {
   itemElement.className = 'item';
   itemElement.append(detail, img);
 
-  console.log(itemElement);
-
   return itemElement;
 }

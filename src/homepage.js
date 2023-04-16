@@ -1,6 +1,6 @@
 import { getItems } from './items.js';
 
-export { buildHomepage, animateSlides };
+export { buildHomepage };
 
 function buildHomepage() {
   const main = document.querySelector('.main');
@@ -28,6 +28,17 @@ function buildHomepage() {
   home.append(prevBtn, nextBtn, slideContainer);
 
   main.append(home);
+
+  initializeSlides();
+}
+
+let isSlidesNotYetInitialized = true;
+
+function initializeSlides() {
+  if (isSlidesNotYetInitialized) {
+    animateSlides();
+    isSlidesNotYetInitialized = false;
+  }
 }
 
 function animateSlides() {
